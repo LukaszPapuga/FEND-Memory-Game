@@ -1,0 +1,228 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #ffffff url('../img/gray.jpg');
+    font-family: 'Lobster', cursive;
+    font-size: 22px;
+}
+
+
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: 'Lobster', cursive;
+    font-weight: 500;
+}
+
+
+/*
+ * Styles for the deck of cards
+ */
+
+.deck {
+    width: 560px;
+    min-height: 580px;
+    background: linear-gradient(109.06454743133224deg, rgba(6, 227, 250, 1) 5.926470588235294%, rgba(229, 151, 64, 1) 95.92647058823528%);
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 3em;
+}
+
+.deck .card {
+    height: 100px;
+    width: 100px;
+    background: #ffffff url('../img/reverse2.jpg');
+    font-size: 0;
+    color: #ffffff;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 10px 4px 40px 0 rgba(46, 61, 73, 0.5);
+    transition: 0.3s;
+}
+
+.deck .card.open {
+    transform: rotateY(180deg);
+    background: #02b3e4;
+    cursor: default;
+    font-size: 48px;
+}
+
+.deck .card.match {
+    cursor: default;
+    background: #02ccba;
+    font-size: 48px;
+     transform: rotate(0);
+    -webkit-transform: rotate(0); /* for Safari */
+    transition: 1s ease all;
+    -webkit-transition: 1s ease all; /* for Safari */
+}
+
+.deck .card.mismatch {
+    background: #A50101;
+}
+
+
+/*
+ * Styles for the Score Panel
+ */
+
+.score-panel {
+    text-align: left;
+    width: 345px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.score-panel .stars {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 10px 0 0;
+    color: #ffd700;
+}
+
+.score-panel .stars li {
+    list-style: none;
+    display: inline-block;
+}
+
+.score-panel .timer {
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+}
+
+.score-panel .restart {
+    float: right;
+    cursor: pointer;
+    location.reload();
+}
+
+
+/*
+ * Styles for modal
+ */
+
+.modal .modal-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 50vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 10;
+    display: block;
+    transition: all .3s;
+}
+
+.modal-box {
+    border-radius: 40px;
+    position: absolute;
+    width: 40%;
+    left: 50%;
+    padding: 10px;
+    transform: translateX(-50%);
+    top: 50%;
+    background-color: #fff;
+}
+
+.modal-start,
+.modal-finished {
+    display: none;
+}
+
+.modal.start .modal-start,
+.modal.finished .modal-finished {
+    display: block;
+}
+
+.btn {
+    background-color: #1abc9c;
+    border: 2px #16a085 solid;
+    border-radius: 12px;
+    color: white;
+    display: block;
+    font-size: 18px;
+    font-family: 'Lobster', cursive;
+    height: 40px;
+    margin: 0 auto;
+    outline: none;
+    width: 100px;
+}
+
+.btn:hover {
+    background-color: #16a085;
+}
+
+
+/*
+ * Media queries
+ */
+
+
+/* For mobile phones */
+
+
+
+
+@media screen and (max-width: 700px) {
+    body {
+        display: flex;
+        justify-content: center;
+    }
+
+    .deck {
+        margin: 0 2px;
+        min-height: auto;
+        padding: 0;
+        width: 90%;
+    }
+
+    .deck .card {
+        flex-basis: 22%;
+        margin: 5px;
+    }
+
+    .modal-box {
+        top: 50%;
+        width: 80%;
+    }
+}
+
+
+/* Tablets and higher  screens */
+
+@media screen and (min-width:  701px min-height: 500px) {
+    body {
+        display: flex;
+        justify-content: center;
+    }
+}
