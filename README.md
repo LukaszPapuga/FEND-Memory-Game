@@ -21,6 +21,7 @@ The app is built with the following code dependencies:
 
 * Download the project and open index.html  to start playing.
 * The gameplay rules are very simple: flip over two hidden cards at a time to locate the ones that match!
+* Or just click https://lukaszpapuga.github.io/FEND-Memory-Game/
 
 ## Notice
 
